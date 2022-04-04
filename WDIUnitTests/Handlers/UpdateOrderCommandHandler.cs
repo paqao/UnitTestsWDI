@@ -24,7 +24,7 @@ namespace WDIUnitTests.Handlers
         public async Task HandleAsync(UpdateOrderCommand command)
         {
             var data = await _orderRepository.GetByIdAsync(command.Id);
-            if(data == null)
+            if (data == null)
             {
                 throw new Exception("Not found order");
             }

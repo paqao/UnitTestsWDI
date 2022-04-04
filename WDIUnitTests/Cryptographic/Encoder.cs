@@ -10,10 +10,16 @@ namespace WDIUnitTests.Cryptographic
     {
         private int Number1 { get; set; }
         private int Number2 { get; set; }
+        private readonly IPrimeNumbersValidator _primeNumbersValidator;
 
         public Encoder(IPrimeNumbersValidator primeNumbersValidator)
         {
-            if(!primeNumbersValidator.AreRelativePrimeNumbers(Number1, Number2))
+           _primeNumbersValidator = primeNumbersValidator;
+        }
+
+        public void TryToValidate(int number1, int number2)
+        {
+            if (!_primeNumbersValidator.AreRelativePrimeNumbers(number1, number2))
             {
                 throw new Exception("Numbers should be relive prime numbers");
             }

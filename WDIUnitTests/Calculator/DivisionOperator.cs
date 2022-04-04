@@ -12,7 +12,7 @@ namespace WDIUnitTests.Calculator
         {
             if (Math.Abs(value2) < double.Epsilon)
             {
-                throw new DivideByZeroException();
+                throw new DivideByZeroException("0");
             }
 
             return value1 / value2;

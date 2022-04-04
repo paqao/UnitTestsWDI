@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Moq.Protected;
 using System;
@@ -44,10 +45,12 @@ namespace WDIUnitTests.MSUnit
                 ItExpr.IsAny<CancellationToken>())
                 .ReturnsAsync(httpResponse);
 
+
             // Act
             int result = await _salesApiClient.GetItemsCountAsync(CancellationToken.None);
 
             // Assert
+          
         }
     }
 }

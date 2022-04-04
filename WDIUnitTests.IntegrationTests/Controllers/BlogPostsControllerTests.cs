@@ -11,15 +11,9 @@ using Xunit;
 
 namespace WDIUnitTests.IntegrationTests.Controllers
 {
-    public class OrderControllerTests : IClassFixture<AppFixture<Program>>
+    public partial class ControllersTests
     {
-        private readonly AppFixture<Program> _appFixture;
-        public OrderControllerTests(AppFixture<Program> appFixture)
-        {
-            _appFixture = appFixture;
-        }
-
-       // [Fact]
+        [Fact]
         public async Task OrdersController_Should_Return_Items()
         {
             // Arrange
@@ -32,7 +26,7 @@ namespace WDIUnitTests.IntegrationTests.Controllers
             response.EnsureSuccessStatusCode();
         }
 
-      //  [Fact]
+        [Fact]
         public async Task OrdersController_ShouldAddItemsToCollection()
         {
             // Arrange

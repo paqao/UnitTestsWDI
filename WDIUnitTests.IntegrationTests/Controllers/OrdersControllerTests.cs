@@ -11,14 +11,8 @@ using Xunit;
 
 namespace WDIUnitTests.IntegrationTests.Controllers
 {
-    public class BlogPostsControllerTests : IClassFixture<AppFixture<Program>>
+    public partial class ControllersTests 
     {
-        private readonly AppFixture<Program> _appFixture;
-        public BlogPostsControllerTests(AppFixture<Program> appFixture)
-        {
-            _appFixture = appFixture;
-        }
-
         [Fact]
         public async Task BlogPostsController_Should_Return_Items()
         {
